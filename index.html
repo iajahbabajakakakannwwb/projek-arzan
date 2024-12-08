@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Menghindari scroll karena video */
+        }
+        /* Video Background */
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Video di belakang konten */
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            text-align: center;
+        }
+        .profile-card {
+            background: rgba(0, 0, 0, 0.6); /* Transparan gelap */
+            padding: 20px;
+            border-radius: 20px;
+            color: white;
+            max-width: 350px;
+            width: 100%;
+            z-index: 1; /* Di atas video */
+        }
+        .profile-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        .profile-card h1 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+        .profile-card p {
+            margin: 5px 0 20px;
+            font-size: 1rem;
+        }
+        .profile-card a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            padding: 10px;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .profile-card a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .profile-card a img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        .location {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <video class="video-bg" autoplay loop muted>
+        <source src="background.mp4" type="video/mp4">
+        Browser Anda tidak mendukung video.
+    </video>
+
+    <div class="container">
+        <div class="profile-card">
+            <img src="profil.jpg" alt="Profile Picture">
+            <h1>Arzanoffc</h1>
+            <p>apan tu? ?</p>
+            <a href="https://www.tiktok.com/@arzan_offc0">
+                <img src="tiktok.png" alt="TikTok Icon"> TikTok
+            </a>
+            <a href="https://github.com/arzanoffc1">
+                <img src="github.png" alt="GitHub Icon"> GitHub
+            </a>
+            <a href="https://t.me/arzanoffc">
+                <img src="telegram.png" alt="Telegram Icon"> Telegram
+            </a>
+            <a href="mailto:support@arzanoffc.games">
+                <img src="email.png" alt="Email Icon"> E-Mail
+            </a>
+            <a href="https://wa.me/6288206540998">
+                <img src="whatsapp.png" alt="WhatsApp Icon"> WhatsApp
+            </a>
+            <div class="location">Jawa tengah cilacap, Indonesia</div>
+        </div>
+    </div>
+</body>
+</html>
