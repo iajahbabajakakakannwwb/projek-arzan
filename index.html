@@ -62,17 +62,51 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
-            transition: 0.3s;
             background: rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
         }
         .profile-card a:hover {
-            background: rgba(255, 255, 255, 0.2);
+            color: black;
         }
         .profile-card a img {
             width: 20px;
             height: 20px;
             margin-right: 10px;
         }
+
+        /* RGB Animation */
+        .profile-card a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet);
+            background-size: 400%;
+            z-index: -1;
+            transition: opacity 0.3s;
+            animation: rgb-animation 6s infinite;
+            opacity: 0;
+        }
+        .profile-card a:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes rgb-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         .location {
             margin-top: 20px;
             font-size: 0.9rem;
@@ -135,7 +169,7 @@
     </div>
 
     <!-- Notification Section -->
-       <div style="position: fixed; top: 0; width: 100%; background: transparent; color: white; text-align: center; padding: 10px; z-index: 10; display: flex; align-items: center;">
+    <div style="position: fixed; top: 0; width: 100%; background: transparent; color: white; text-align: center; padding: 10px; z-index: 10; display: flex; align-items: center;">
         <img src="notification-icon.png" alt="Notification Icon" style="width: 30px; height: 30px; margin-right: 10px;">
         <marquee behavior="scroll" direction="left" style="color: white; font-size: 14px;">sosial media real arzan hanya ini❗❗</marquee>
     </div>
