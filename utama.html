@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Menghindari scroll karena video */
+        }
+        /* Video Background */
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Video di belakang konten */
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            text-align: center;
+        }
+        .profile-card {
+            padding: 20px;
+            border-radius: 20px;
+            color: white;
+            max-width: 350px;
+            width: 100%;
+            z-index: 1; /* Di atas video */
+        }
+        .profile-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        .profile-card h1 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+        .profile-card p {
+            margin: 5px 0 20px;
+            font-size: 1rem;
+        }
+        .profile-card a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            padding: 10px;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .profile-card a:hover {
+            color: black;
+        }
+        .profile-card a img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        /* RGB Animation */
+        .profile-card a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet);
+            background-size: 400%;
+            z-index: -1;
+            transition: opacity 0.3s;
+            animation: rgb-animation 6s infinite;
+            opacity: 0;
+        }
+        .profile-card a:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes rgb-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .profile-card a:active {
+            transform: scale(0.95); /* Mengurangi ukuran tombol sebesar 5% saat diklik */
+            transition: transform 0.1s ease; /* Efek transisi saat tombol diklik */
+        }
+
+        .location {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Tombol Buy */
+        .cart-button {
+            position: fixed;
+            top: 60px; /* Jarak dari atas */
+            right: 20px; /* Jarak dari kanan */
+            background:black; /* Latar belakang hijau */
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white; /* Warna teks */
+            padding: 8px 12px; /* Penyesuaian ukuran */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            z-index: 20; /* Pastikan di atas elemen lainnya */
+        }
+        .cart-button:hover {
+            background: darkgreen; /* Warna latar belakang saat hover */
+            color: white; /* Warna teks saat hover */
+        }
+        .cart-button svg {
+            width: 18px; /* Penyesuaian ukuran ikon */
+            height: 18px; /* Penyesuaian ukuran ikon */
+        }
+        .cart-button:active {
+            transform: scale(0.9); /* Efek mengecil saat diklik */
+            transition: transform 0.1s ease; /* Efek transisi saat tombol diklik */
+        }
+    </style>
+    <script>
+        // Disable Right Click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // Disable Text Selection
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+        });
+
+        // Disable Copy (CTRL+C)
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey && e.key === 'c') || (e.ctrlKey && e.key === 'u') || (e.ctrlKey && e.key === 's')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Video Background -->
+    <video class="video-bg" autoplay loop muted>
+        <source src="background.mp4" type="video/mp4">
+        Browser Anda tidak mendukung video.
+    </video>
+
+    <!-- Tombol Buy di Pojok Kanan Atas -->
+    <a href="https://example.com/second-website" class="cart-button">
+        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l3 14h12l3-14H6"></path>
+        </svg>
+        Buy
+    </a>
+
+    <div class="container">
+        <div class="profile-card">
+            <img src="profil.jpg" alt="Profile Picture">
+            <h1>Arzanoffc</h1>
+            <p>klik button dibawah untuk mengakses</p>
+            <a href="https://www.tiktok.com/@arzan_offc0">
+                <img src="tiktok.png" alt="TikTok Icon"> TikTok
+            </a>
+            <a href="https://github.com/arzanoffc1">
+                <img src="github.png" alt="GitHub Icon"> GitHub
+            </a>
+            <a href="https://t.me/arzanoffc">
+                <img src="telegram.png" alt="Telegram Icon"> Telegram
+            </a>
+            <a href="mailto:support@arzanoffc.games">
+                <img src="email.png" alt="Email Icon"> E-Mail
+            </a>
+            <a href="https://wa.me/62882006540998">
+                <img src="whatsapp.png" alt="WhatsApp Icon"> WhatsApp1
+            </a>
+            <a href="https://wa.me/6285601672998">
+                <img src="whatsapp.png" alt="WhatsApp Icon"> WhatsApp2
+            </a>
+            <a href="https://whatsapp.com/channel/0029VaiteMkAjPXFkjuvS02O">
+                <img src="ppch.png" alt="WhatsApp Icon"> Chanel WhatsApp
+            </a>
+            <div class="location">Jawa tengah cilacap, Indonesia</div>
+        </div>
+    </div>
+
+    <!-- Notification Section -->
+    <div style="position: fixed; top: 0; width: 100%; background: transparent; color: white; text-align: center; padding: 10px; z-index: 10; display: flex; align-items: center;">
+        <img src="notification-icon.png" alt="Notification Icon" style="width: 30px; height: 30px; margin-right: 10px;">
+        <marquee behavior="scroll" direction="left" style="color: white; font-size: 14px;">sosial media real arzan hanya ini❗❗</marquee>
+    </div>
+</body>
+</html>
