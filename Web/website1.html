@@ -131,43 +131,43 @@
         <div class="item">
             <img src="pterodactyl-icon2.png" alt="Pterodactyl">
             <p>Ram: 1GB<br>CPU: 20%<br>Rp 1k</p>
-            <button class="buy-button" onclick="redirectToWhatsApp('1GB', '20%', '1000')">BUY</button>
+            <button class="buy-button" onclick="redirectToWhatsApp('panel', '1GB', '20%', '1000')">BUY</button>
         </div>
         <!-- Item 2 -->
         <div class="item">
             <img src="pterodactyl-icon2.png" alt="Pterodactyl">
             <p>Ram: 2GB<br>CPU: 50%<br>Rp 2k</p>
-            <button class="buy-button" onclick="redirectToWhatsApp('2GB', '50%', '2000')">BUY</button>
+            <button class="buy-button" onclick="redirectToWhatsApp('panel', '2GB', '50%', '2000')">BUY</button>
         </div>
         <!-- Item 3 -->
         <div class="item">
             <img src="pterodactyl-icon2.png" alt="Pterodactyl">
             <p>Ram: 3GB<br>CPU: 70%<br>Rp 3k</p>
-            <button class="buy-button" onclick="redirectToWhatsApp('3GB', '70%', '3000')">BUY</button>
+            <button class="buy-button" onclick="redirectToWhatsApp('panel', '3GB', '70%', '3000')">BUY</button>
         </div>
         <!-- Item 4 -->
         <div class="item">
             <img src="pterodactyl-icon2.png" alt="Pterodactyl">
             <p>Ram: 4GB<br>CPU: 90%<br>Rp 4k</p>
-            <button class="buy-button" onclick="redirectToWhatsApp('4GB', '90%', '4000')">BUY</button>
+            <button class="buy-button" onclick="redirectToWhatsApp('panel', '4GB', '90%', '4000')">BUY</button>
         </div>
         <!-- Item 5 -->
         <div class="item">
             <img src="pterodactyl-icon2.png" alt="Pterodactyl">
             <p>Ram: ∞<br>CPU: ∞%<br>Rp 7k</p>
-            <button class="buy-button" onclick="redirectToWhatsApp('∞GB', '∞%', '7000')">BUY</button>
+            <button class="buy-button" onclick="redirectToWhatsApp('panel', '∞GB', '∞%', '7000')">BUY</button>
         </div>
         <!-- Item 6 -->
         <div class="item">
             <img src="pterodactyl-icon2.png" alt="Pterodactyl">
             <p>Admin panel <br>Rp 10k</p>
-            <button class="buy-button" onclick="redirectToWhatsApp('admin panel', '0', '10000')">BUY</button>
+            <button class="buy-button" onclick="redirectToWhatsApp('Admin panel', '0GB', '0%', '10000')">BUY</button>
         </div>
     </div>
 
     <script>
-        function redirectToWhatsApp(ram, cpu, price) {
-            const message = `Bang beli panel\nRam: ${ram}\nCPU: ${cpu}\nHarga: Rp ${price}`;
+        function redirectToWhatsApp(jenis, ram, cpu, price) {
+            const message = `Bang beli panel\njenis: ${jenis}\nRam: ${ram}\nCPU: ${cpu}\nHarga: Rp ${price}`;
             const whatsappUrl = `https://wa.me/62882006540998?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         }
