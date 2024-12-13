@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>produk lain</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            color: white;
+        }
+        .header {
+            padding: 20px;
+            font-size: 24px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 20px;
+        }
+        .item {
+            background: white;
+            color: black;
+            width: 150px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .item img {
+            width: 100px;
+            height: auto;
+        }
+        .buy-button {
+            margin-top: 10px;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #32CD32;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: transform 0.1s ease;
+        }
+        .buy-button:active {
+            transform: scale(0.9);
+        }
+        .profile {
+            position: relative;
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            margin: 30px auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid cyan;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .profile-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .profile-desc {
+            font-size: 16px;
+            line-height: 1.5;
+            max-width: 400px;
+            margin: 0 auto 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Tambahan untuk tombol "produk lain" */
+        .produk-lain-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background-color: #32CD32;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.1s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
+        }
+        .produk-lain-button svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        .produk-lain-button:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Profil -->
+    <div class="profile">
+        <img src="profile-picture.jpg" alt="Profile Picture">
+    </div>
+    <div class="profile-title">Arzan-offc</div>
+    <div class="profile-desc">
+        hallo,ini ada produk/layanan lain yg kami sediakan
+    </div>
+    <div class="header">Produk lain</div>
+    <div class="container">
+        <!-- Item 1 -->
+        <div class="item">
+            <img src="subdo.png" alt="Pterodactyl">
+            <p>jenis: sc subdo<br>speck: 30api🔥<br>Rp 25k</p>
+            <button class="buy-button" onclick="redirectToWhatsApp('scrip','30api🔥'25.000')">BUY</button>
+        </div>
+         <!-- Item 2 -->
+        <div class="item">
+            <img src="subdo.png" alt="Pterodactyl">
+            <p>jenis: join grup subdo<br>speck: 30api🔥<br>Rp 5k</p>
+            <button class="buy-button" onclick="redirectToWhatsApp('scrip','30api🔥'5.000')">BUY</button>
+        </div>
+         <!-- Item 3 -->
+        <div class="item">
+            <img src="jasa install.png" alt="Pterodactyl">
+            <p>jenis: jasa install panel<br>speck: free rq link log<br>Rp 10k</p>
+            <button class="buy-button" onclick="redirectToWhatsApp('scrip','30api🔥'5.000')">BUY</button>
+        </div>
+    </div>
+
+    <script>
+        function redirectToWhatsApp(jenis, speck, price) {
+            const message = `Bang beli \nJenis: ${jenis}\nspeck: ${speck}\nHarga: Rp ${price}`;
+            const whatsappUrl = `https://wa.me/62882006540998?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
