@@ -76,37 +76,6 @@
             margin-right: 10px;
         }
 
-        /* RGB Animation */
-        .profile-card a::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet);
-            background-size: 400%;
-            z-index: -1;
-            transition: opacity 0.3s;
-            animation: rgb-animation 6s infinite;
-            opacity: 0;
-        }
-        .profile-card a:hover::before {
-            opacity: 1;
-        }
-
-        @keyframes rgb-animation {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
         .profile-card a:active {
             transform: scale(0.95); /* Mengurangi ukuran tombol sebesar 5% saat diklik */
             transition: transform 0.1s ease; /* Efek transisi saat tombol diklik */
@@ -117,16 +86,16 @@
             font-size: 0.9rem;
         }
 
-        /* Tombol Buy */
+        /* Tombol Produk dengan Animasi Berdenyut */
         .cart-button {
             position: fixed;
             top: 60px; /* Jarak dari atas */
             right: 20px; /* Jarak dari kanan */
-            background:black; /* Latar belakang hijau */
+            background: black; /* Latar belakang */
             border: 2px solid white;
             border-radius: 10px;
             color: white; /* Warna teks */
-            padding: 8px 12px; /* Penyesuaian ukuran */
+            padding: 10px 14px; /* Penyesuaian ukuran */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -134,18 +103,33 @@
             font-weight: bold;
             transition: 0.3s;
             z-index: 20; /* Pastikan di atas elemen lainnya */
+            animation: button-pulse 2s infinite; /* Animasi berdenyut */
         }
+
+        /* Hover State */
         .cart-button:hover {
             background: darkgreen; /* Warna latar belakang saat hover */
-            color: white; /* Warna teks saat hover */
+            color: white;
+            transform: scale(1.1); /* Sedikit memperbesar tombol saat hover */
         }
-        .cart-button svg {
-            width: 18px; /* Penyesuaian ukuran ikon */
-            height: 18px; /* Penyesuaian ukuran ikon */
-        }
+
+        /* Efek saat tombol diklik */
         .cart-button:active {
-            transform: scale(0.9); /* Efek mengecil saat diklik */
-            transition: transform 0.1s ease; /* Efek transisi saat tombol diklik */
+            transform: scale(0.9); /* Mengecil saat diklik */
+            transition: transform 0.1s ease; 
+        }
+
+        /* Animasi Denyut */
+        @keyframes button-pulse {
+            0% {
+                transform: scale(1); /* Ukuran normal */
+            }
+            50% {
+                transform: scale(1.1); /* Sedikit membesar */
+            }
+            100% {
+                transform: scale(1); /* Kembali ke ukuran normal */
+            }
         }
     </style>
     <script>
@@ -174,7 +158,7 @@
         Browser Anda tidak mendukung video.
     </video>
 
-    <!-- Tombol Buy di Pojok Kanan Atas -->
+    <!-- Tombol produk di Pojok Kanan Atas -->
     <a href="Web/list-panel.html" class="cart-button">
         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="9" cy="21" r="1"></circle>
@@ -188,12 +172,15 @@
         <div class="profile-card">
             <img src="profil.jpg" alt="Profile Picture">
             <h1>Arzanoffc</h1>
-            <p>jangan stay lama² kalo gk punya paket 🗿🗿🗿</p>
+            <p>klik button dibawah untuk mengakses</p>
             <a href="https://www.instagram.com/arzan_offc">
                 <img src="instagram.png" alt="Instagram Icon"> Instagram
             </a>
             <a href="https://www.tiktok.com/@arzan_offc0">
                 <img src="tiktok.png" alt="TikTok Icon"> TikTok
+            </a>
+            <a href="https://github.com/arzanoffc1">
+                <img src="github.png" alt="GitHub Icon"> GitHub
             </a>
             <a href="https://t.me/arzanoffc">
                 <img src="telegram.png" alt="Telegram Icon"> Telegram
